@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.js"></script>
+  <script src="oblig3.js"></script> <!-- Linker til javascriptet-->
+
+
+  <!-- Linker for å få bootstrap-styling: -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+          crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<div class="body"> <!--Lager en class for hele innholdet i boyd for å sentrere det i midten med css-styling nederst i html-->
+
+  <h1>Bestilling av kinobilletter</h1>
+
+  <!--Legger hele bestilling av kinobilletter applikasjonen inne i en form for å få bootstrap sin layout-->
+
+  <div class="input-group mb3">
+
+    <label class="input-group-text" for="film">Velg film:</label>
+
+    <select id="film" class="form-select"> <!-- Lager en nedtrekksmeny for valg av filmer og styler med bootstrap -->
+      <option value="">Velg film her</option>
+      <option value="Mamma mia">Mamma mia 1</option>
+      <option value="Kampen om Narvik"> Kampen om Narvik </option>
+      <option value="Wakanda forever">Wakanda forever</option>
+    </select>
+
+  </div>
+  <span id="filmError" style="color: red"></span>
+
+  <br>
+  <br>
+
+  <div class="form-group">
+    <label for="antall">Antall</label>
+    <input id="antall" type="number" class="form-control col-xs-3" style="width: 4em"/>
+    <span id="antallError" style="color:red"></span>
+  </div>
+
+
+  <br>
+  <!--Lager default"labeler" med bootstrap for å få en bedre struktur på fornavn, etternavn, telfonnr og epost-->
+  <div class="form-group">
+    <label for="fornavn">Fornavn</label>
+    <input id="fornavn" type="text" class="form-control col-xs-3"/>
+    <span id="fornavnError" style="color:red"></span>
+  </div>
+
+
+  <div class="form-group">
+    <label for="etternavn">Etternavn</label>
+    <input id="etternavn" type="text" class="form-control col-xs-3"/>
+    <span id="etternavnError" style="color:red"></span>
+  </div>
+
+  <div class="form-group">
+    <label for="telefonnr">Telefonnr</label>
+    <input id="telefonnr" type="text" class="form-control col-xs-3"/>
+    <span id="telefonnrError" style="color:red"></span>
+  </div>
+
+  <div class="form-group">
+    <label for="epost">Epost</label>
+    <input id="epost" type="text" class="form-control col-xs-3"/>
+    <span id="epostError" style="color:red"></span>
+  </div>
+
+  <br>
+
+
+  <div>
+    <button onclick="registrerKjop();" class="btn btn-primary">Kjøp billett</button>
+
+    <div class="col-md-8">
+      <h2>Alle billetter</h2>
+
+      <div id="billettKjop"></div> <!--Et felt hvor hvor tabellen skal skrives ut-->
+
+      <button onclick="slettBillett()" class="btn btn-danger btn-md btn-block mt-3">Slett alle billettene </button>
+    </div>
+  </div>
+
+</div>
+
+<style>
+  .body{
+    display: table;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5em;
+  }
+</style>
+
+
+
+
+</body>
+</html>
