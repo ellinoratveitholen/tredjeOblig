@@ -1,3 +1,5 @@
+package com.example.tredjeoblig;
+
 public class Billett {
     //deklarerer attributter
     private int id; //deklarerer en id for for relasjonsdatabasen

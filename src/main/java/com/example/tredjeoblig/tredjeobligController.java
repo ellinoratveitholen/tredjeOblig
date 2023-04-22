@@ -1,3 +1,7 @@
+package com.example.tredjeoblig;
+
+import com.example.tredjeoblig.Billett;
+import com.example.tredjeoblig.BilletterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,10 +28,4 @@ public class tredjeobligController {
     public void slettBillett(){//når "slett alle billettene" blir trykket, nullstilles labelene og vi gir beskjed til sereveren at billettene skal slettes
         rep.slettAlleBilletter();
     }
-
-    @PostMapping("/test")
-    public void test(){
-        System.out.println("test");
-    }
-
 }
